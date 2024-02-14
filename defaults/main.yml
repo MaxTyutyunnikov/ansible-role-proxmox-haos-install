@@ -13,3 +13,4 @@ haos_proxmox_storage: local
 haos_proxmox_storage_interface: sata0
 haos_proxmox_scsihw: virtio-scsi-single
 haos_proxmox_vmid: 1000
+haos_proxmox_bridge: vmbr0

@@ -41,12 +41,12 @@
 
   - name: Determine network adaptor string when MAC address is specified
     ansible.builtin.set_fact:
-      haos_net0: 'virtio={{ haos_proxmox_mac_address }},bridge=vmbr0'
+      haos_net0: "virtio={{ haos_proxmox_mac_address }},bridge={{ haos_proxmox_bridge }}"
     when: haos_proxmox_mac_address
 
   - name: Determine network adaptor string when MAC address is not specified
     ansible.builtin.set_fact:
-      haos_net0: 'virtio,bridge=vmbr0'
+      haos_net0: 'virtio,bridge={{ haos_proxmox_bridge }}'
     when: not haos_proxmox_mac_address
 
   - name: Create VM
